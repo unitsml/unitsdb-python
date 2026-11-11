@@ -1,0 +1,19 @@
+{
+  "package": "unitsdb",
+  "planned_repository": "unitsml/unitsdb-python",
+  "qualified_source_head": "6cb847eaa97464b5106517dc3eee5c42141a49c1",
+  "rust_toolchain": "1.95.0",
+  "native": null,
+  "data": {
+    "repository": "unitsml/unitsdb-ts",
+    "revision": "22d026b81e80a15ad5b3fa253cfcf23407f18a13",
+    "public": true,
+    "unitsdb_data": "c2c7d18 (v2.2.0); corrected cwt/kp data NOT pinned until unitsml/unitsdb#142 is approved by ronaldtse"
+  },
+  "tests": [],
+  "python_runtime": {
+    "repository": "parsanol/parsanol-python",
+    "revision": "7bb1e554ec29dcd82ee7a2c467bc46309170ceeb",
+    "note": "only for packages that load Parsanol at runtime; none of these five does (native stages are self-contained)"
+  }
+}
