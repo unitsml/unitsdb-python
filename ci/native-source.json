@@ -6,9 +6,14 @@
   "native": null,
   "data": {
     "repository": "unitsml/unitsdb-ts",
-    "revision": "22d026b81e80a15ad5b3fa253cfcf23407f18a13",
+    "revision": "2f27dbd6a664fde498455159cccbf2fb2e78f154",
     "public": true,
-    "unitsdb_data": "c2c7d18 (v2.2.0); corrected cwt/kp data NOT pinned until unitsml/unitsdb#142 is approved by ronaldtse"
+    "unitsdb_data": "b210137 (unitsml/unitsdb#143 head; merged as b0b4315, same tree c57eb0a)",
+    "bundled_by": {
+      "repository": "unitsml/unitsdb-rs",
+      "revision": "969a131b8992930a6ff6f869291f1f0d7cb68d33",
+      "note": "data/*.json copied byte-for-byte from this merged unitsdb-rs delivery head"
+    }
   },
   "tests": [
     "tests/test_installed.py"

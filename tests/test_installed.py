@@ -27,6 +27,15 @@ class InstalledDataTests(unittest.TestCase):
         for collection in unitsdb.Collection:
             self.assertEqual(unitsdb.records(collection), dataset[collection.value])
 
+    def test_final_unitsdb_data_revision(self):
+        self.assertEqual(unitsdb.manifest()["producer"]["commit"], "2f27dbd6a664fde498455159cccbf2fb2e78f154")
+        self.assertEqual(unitsdb.provenance()["data"]["commit"], "b210137fd87c493ad437468c925c98ec921a4468")
+        # UnitsDB b210137 defines the US hundredweight as hecto-pound.
+        cwt = unitsdb.find("unit_id", "NISTu230")
+        self.assertEqual(cwt["root_units"], [{
+            "power": 1, "unit_reference": {"id": "NISTu201"}, "prefix_reference": {"id": "NISTp10_2"},
+        }])
+
     def test_lookup_case_unknown_and_invalid_kinds(self):
         self.assertEqual(unitsdb.find("currency_code", "usd"),
                          unitsdb.find("currency_code", "USD"))
