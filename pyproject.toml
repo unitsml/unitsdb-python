@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unitsdb"
+version = "0.1.0"
+description = "Source-pinned UnitsDB register and lookup tables"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.md"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+unitsdb = ["data/*.json"]

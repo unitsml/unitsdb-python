@@ -1,0 +1,43 @@
+name: Python wheel
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: python-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  installed:
+    name: Installed wheel (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ['3.10', '3.11', '3.12', '3.13', '3.14', '3.15']
+        include:
+          - os: macos-latest
+            python: '3.15'
+          - os: windows-latest
+            python: '3.15'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build the wheel and install it in a fresh environment
+        run: python scripts/ci.py install-wheel
+      - name: Check data seals and lookups against the installed wheel
+        run: python scripts/ci.py test-installed
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.os }}-${{ matrix.python }}
+          include-hidden-files: true
+          path: .ci-evidence/*
+          if-no-files-found: warn
+          retention-days: 7

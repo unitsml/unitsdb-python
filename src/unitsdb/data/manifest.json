@@ -1,0 +1,32 @@
+{
+  "schema": "unitsdb.canonical-projection/1",
+  "producer": {
+    "repository": "https://github.com/unitsml/unitsdb-ts",
+    "commit": "22d026b81e80a15ad5b3fa253cfcf23407f18a13"
+  },
+  "asset_sha256": {
+    "unitsdb.json": "660b471fd895d99a74849adaf1cfb0ec4570cd5dbcd9ebf695970af0dc0b3c97",
+    "lookup-index.json": "f8220386880fa997fd9f12e897af6b8865e6b4bef6446bc8261a8985815cae49"
+  },
+  "tables": {
+    "units": 380,
+    "prefixes": 33,
+    "dimensions": 93,
+    "quantities": 200,
+    "currencies": 178,
+    "scales": 5
+  },
+  "lookup_keys": {
+    "unit_symbol": 414,
+    "unit_id": 760,
+    "unit_uri": 429,
+    "prefix_symbol": 33,
+    "prefix_id": 66,
+    "dimension_id": 92,
+    "quantity_id": 399,
+    "currency_code": 178,
+    "currency_numeric": 178,
+    "scale_id": 10,
+    "record_id": 1851
+  }
+}

@@ -1,0 +1,2 @@
+# Sealed data: keep bytes exact on every platform (seal hashes cover these files)
+src/unitsdb/data/*.json -text
