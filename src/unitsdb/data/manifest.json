@@ -2,10 +2,10 @@
   "schema": "unitsdb.canonical-projection/1",
   "producer": {
     "repository": "https://github.com/unitsml/unitsdb-ts",
-    "commit": "22d026b81e80a15ad5b3fa253cfcf23407f18a13"
+    "commit": "2f27dbd6a664fde498455159cccbf2fb2e78f154"
   },
   "asset_sha256": {
-    "unitsdb.json": "660b471fd895d99a74849adaf1cfb0ec4570cd5dbcd9ebf695970af0dc0b3c97",
+    "unitsdb.json": "595e987112aed69d06ac2e68fda4b12e58266d5577ccd8cd8aa2cdc56eb765d4",
     "lookup-index.json": "f8220386880fa997fd9f12e897af6b8865e6b4bef6446bc8261a8985815cae49"
   },
   "tables": {
