@@ -9,7 +9,7 @@ import unitsdb
 class InstalledDataTests(unittest.TestCase):
     def test_packaged_bytes_match_sealed_manifest(self):
         assets = importlib.resources.files("unitsdb").joinpath("data")
-        manifest = json.loads(assets.joinpath("manifest.json").read_text())
+        manifest = json.loads(assets.joinpath("manifest.json").read_text(encoding="utf-8"))
         for name in ("unitsdb.json", "lookup-index.json"):
             with self.subTest(asset=name):
                 self.assertIn(hashlib.sha256(assets.joinpath(name).read_bytes()).hexdigest(),
